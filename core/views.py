@@ -9,6 +9,9 @@ def home(request):
 def about(request):
     return render(request, 'core/about.html')
 
+def login(request):
+    return render(request, 'core/login.html')
+
 def reg_tech(request):
     if request.method == 'POST':
         form = TeacherRegisterForm(request.POST)
