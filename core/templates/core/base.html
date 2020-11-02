@@ -37,12 +37,12 @@
                     <!-- Navbar Right Side -->
                     <div class="navbar-nav">
                         {% if user.is_authenticated %}
-                            <a class="nav-item nav-link" href={% url 'core-logout' %}>Wyloguj</a>
+                            <a class="nav-item nav-link" href={% url 'users-logout' %}>Wyloguj</a>
                             <a class="nav-item nav-link" href="#">Moje konto</a>
 
                         {% else %}
-                            <a class="nav-item nav-link" href={% url 'core-login' %}>Zaloguj</a>
-                            <a class="nav-item nav-link" href={% url 'core-reg-stu' %}>Zarejestruj</a>
+                            <a class="nav-item nav-link" href={% url 'users-login' %}>Zaloguj</a>
+                            <a class="nav-item nav-link" href={% url 'users-reg-stu' %}>Zarejestruj</a>
                         {% endif %}
                     </div>
                 </div>
