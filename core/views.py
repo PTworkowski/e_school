@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from users_app.forms import TeacherRegisterForm, StudentRegisterForm
+# from users_app.forms import TeacherRegisterForm, StudentRegisterForm
 
 # Create your views here.
 def home(request):
