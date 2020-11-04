@@ -11,25 +11,12 @@ class MyUser(AbstractUser):
 
 
 
-
-
     def __str__(self):
         return f'{self.username} Profil '
 
-# Create your models here.
-# class Student(User):
-#     student = models.OneToOneField(User, on_delete= models.CASCADE)
-#     is_active = False
-#
-#
-#
-#
-#
-#     def __str__(self):
-#         return f'{self.student.username} Profil ucznia'
-#
-# class Teacher(models.Model):
-#     teacher = models.OneToOneField(User, on_delete=models.CASCADE)
-#
-#     def __str__(self):
-#         return f'{self.teacher.username} Profil nauczyciela'
+class Adres(models.Model):
+    user = models.OneToOneField(MyUser, primary_key= True, on_delete=models.CASCADE)
+    adres= models.CharField(max_length=120, default='',null=True, blank=True)
+    city= models.CharField(max_length=20, default='',null=True, blank=True)
+    zip_code=models.CharField(max_length=6, default='', null=True, blank=True)
+

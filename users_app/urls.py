@@ -7,6 +7,7 @@ urlpatterns = [
     path('logout/', auth_vievs.LogoutView.as_view(template_name= 'users_app/logout.html'), name = 'users-logout'),
     path('reg_stu/', views.reg_stu, name = 'users-reg-stu'),
     path('reg_tech/', views.reg_tech, name = 'users-reg-tech'),
+    path('profile/', views.profile, name = 'users-profile'),
 
 
 ]
