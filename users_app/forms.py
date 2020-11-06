@@ -1,9 +1,10 @@
+from django.conf import settings
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from users_app.models import MyUser, Adres
 
 class CustomUserRegisterForm(UserCreationForm):
-
+    email = forms.EmailField()
 
     class Meta:
         model = MyUser

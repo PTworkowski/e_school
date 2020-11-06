@@ -1,3 +1,4 @@
+
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from users_app.forms import UserUpdateForm, UserAdresUpdateForm, CustomUserRegisterForm
@@ -49,7 +50,7 @@ def profile(request):
             messages.success(request, f'Account has bean updated')
             return redirect('users-profile')
     else:
-        u_form = UserUpdateForm(request.POST, instance=request.user)
+        u_form = UserUpdateForm(instance=request.user)
         p_form = UserAdresUpdateForm(instance=request.user.adres)
 
     context = {
