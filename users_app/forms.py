@@ -1,7 +1,7 @@
 from django.conf import settings
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from users_app.models import MyUser, Adres
+from users_app.models import MyUser, Address
 
 class CustomUserRegisterForm(UserCreationForm):
     email = forms.EmailField()
@@ -14,8 +14,8 @@ class CustomUserRegisterForm(UserCreationForm):
 class UserAdresUpdateForm(forms.ModelForm):
 
     class Meta:
-        model=Adres
-        fields=['adres', 'city', 'zip_code']
+        model=Address
+        fields=['address', 'building','apartment', 'city', 'zip_code']
 
 
 class UserUpdateForm(forms.ModelForm):

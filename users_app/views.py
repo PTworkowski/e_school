@@ -43,7 +43,7 @@ def reg_stu(request):
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
-        p_form = UserAdresUpdateForm(request.POST, instance=request.user.adres)
+        p_form = UserAdresUpdateForm(request.POST, instance=request.user.address)
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
@@ -51,7 +51,7 @@ def profile(request):
             return redirect('users-profile')
     else:
         u_form = UserUpdateForm(instance=request.user)
-        p_form = UserAdresUpdateForm(instance=request.user.adres)
+        p_form = UserAdresUpdateForm(instance=request.user.address)
 
     context = {
         'u_form': u_form,
