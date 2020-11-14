@@ -1,0 +1,23 @@
+{% extends "core/base.html" %}
+{% block content %}
+    <div class="dropdown">
+      <button class="dropbtn">Wybierz grupę</button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+    <form action={% url "materials_upload" %} method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br>
+        <form action="/contact/" method="post">
+            {% for field in form %}
+                <div class="fieldWrapper">
+                    {{ field.label_tag }} {{ field }}
+                </div>
+            {% endfor %}
+            <p><input type="submit" value="Send message" /></p>
+        </form>
+    </form>
+{% endblock content %}

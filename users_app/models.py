@@ -12,7 +12,7 @@ class MyUser(AbstractUser):
 
 
     def __str__(self):
-        return f'{self.username} Profil '
+        return f'Profil {self.username}'
 
 class Address(models.Model):
     user = models.OneToOneField(MyUser, primary_key= True, on_delete=models.CASCADE)

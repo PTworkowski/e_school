@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'users_app.apps.UsersAppConfig',
+    'teacher_app.apps.TeacherAppConfig',
+    'library_app',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -123,6 +125,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 AUTH_USER_MODEL = 'users_app.MyUser'
 
