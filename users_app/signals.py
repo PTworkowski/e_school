@@ -9,4 +9,4 @@ def create_adres(sender, instance, created, **kwargs):
 
 @receiver(post_save, sender= MyUser)
 def save_adres(sender, instance, **kwargs):
-    instance.adres.save()
+    instance.address.save()
