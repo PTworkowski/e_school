@@ -13,7 +13,7 @@ ul {
 }
 
 .bg-steel {
-  background-color: #78588D;
+  background-color: #006600;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -29,7 +29,7 @@ ul {
 }
 
 .content-section {
-  background: #ffffff;
+  background: #d6f5d6;
   padding: 10px 20px;
   border: 1px solid #dddddd;
   border-radius: 3px;
@@ -41,7 +41,7 @@ ul {
 }
 
 a.article-title:hover {
-  color: #428bca;
+  color: #2d5608;
   text-decoration: none;
 }
 

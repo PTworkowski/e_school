@@ -1,8 +1,12 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, FormView
 from django.http import HttpResponseRedirect, HttpResponse
-from datetime import date
+from users_app import views
 
-# Create your views here.
+
+
+def index(request):
+    return HttpResponse("Zalogowałeś się poprawnie na swój profil")
+
 def get_link(request):
-    return render(request, 'teacher_app/get_link.html')
+    return render(request, 'teacher_app/send_link.html')
