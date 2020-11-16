@@ -12,28 +12,24 @@ class Course(models.Model):
     schedule = models.ForeignKey(Schedule, on_delete = models.CASCADE)
 
     def __str__(self):
-        return
-        pass
+        return self.name
 
 class Student_courses(models,Model):
-    student_id = models.ForeignKey(Users, on_delete = models.CASCADE)
-    course_id = models.ForeignKey(Users, on_delete = models.CASCADE)
-    payment  = models.BooleanField()
+    student = models.ForeignKey(Users, on_delete = models.CASCADE)
+    course = models.ForeignKey(Course, on_delete = models.CASCADE)
+    payment = models.BooleanField()
 
     def __str__(self):
-        return
-        pass
+        return self.course
 
 class Zoom_link(models.Model):
     meeting_link = models.URLField(max_length=200)
 
     def __str__(self):
-        return
-        pass
+        return self.meeting_link
 
 class Course_materials(models.Model):
-    file_id = models.ForeignKey(Files,on_delete = models.CASCADE)
+    file = models.ForeignKey(Files,on_delete = models.CASCADE)
 
     def __str__(self):
-        return
-        pass
+        return self.file
