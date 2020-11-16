@@ -1,5 +1,7 @@
 {% extends "core/base.html" %}
 {% block content %}
+{% load crispy_forms_tags %}
+<div class="container">
     <div class="dropdown">
       <button class="dropbtn">Wybierz grupę</button>
       <div class="dropdown-content">
@@ -11,13 +13,17 @@
     <form action={% url "materials_upload" %} method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <br>
+    <div>
         <form action="/contact/" method="post">
             {% for field in form %}
                 <div class="fieldWrapper">
                     {{ field.label_tag }} {{ field }}
                 </div>
             {% endfor %}
-            <p><input type="submit" value="Send message" /></p>
+            <p><input type="submit" value="Dodaj materiały" /></p>
         </form>
+        </div>
     </form>
+  </div>
+
 {% endblock content %}
