@@ -7,4 +7,5 @@ db.sqlite3
 */migratons/
 /migratons/
 !*/migrations/__init__.py
+*/media/
 
