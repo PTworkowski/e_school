@@ -1,5 +1,6 @@
 from django.db import models
-import users_app, library_app
+import library_app
+import users_app
 
 
 
@@ -22,16 +23,16 @@ class Schedule(models.Model):
 
 
 class Course(models.Model):
-     name = models.CharField(max_length=225)
-     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
-     zoom_link = models.URLField(max_length=255)
-     level = models.CharField(max_length=225)
-     teacher = models.ForeignKey(users_app.models.Users, on_delete=models.CASCADE)
-     student = models.ManyToManyField(users_app.models.Users, on_delete=models.CASCADE)
-     schedule = models.ForeignKey(Schedule, on_delete=models.CASCADE)
+    name = models.CharField(max_length=225)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    zoom_link = models.URLField(max_length=255)
+    level = models.CharField(max_length=225)
+    teacher = models.ForeignKey(users_app.models.Users, on_delete=models.CASCADE)
+    student = models.ManyToManyField(users_app.models.Users, on_delete=models.CASCADE)
+    schedule = models.ForeignKey(Schedule, on_delete=models.CASCADE)
 
-     def __str__(self):
-         return self.name
+    def __str__(self):
+        return self.name
 
 
 #Nie wiem czy to jest poprawne, myśle że to jest niepotrzebne????
