@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.list import ListView
-from .models import Subject
+from .models import Subjects
 
 
 # Create your views here.
@@ -16,7 +16,7 @@ def i_am_admin(request):
 
 def subject_list(request):
     if i_am_admin(request):
-        subs = Subject.objects.all()
+        subs = Subjects.objects.all()
         return render(request, 'administration_app/subjects_app.html', {'subjects': subs})
 
 
