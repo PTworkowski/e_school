@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'users_app.apps.UsersAppConfig',
-    'administration_app.apps.administration_app',
+    'administration_app.apps.AdministrationAppConfig',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -60,6 +60,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
+
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
