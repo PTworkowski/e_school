@@ -5,57 +5,54 @@
    <!-- Required meta tags -->
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
    <link rel="stylesheet" type="text/css" href="{% static 'core/main.css' %}">
    {% if title %}
-       <title>E-duka - {{ title }}</title>
+       <title>E-dukacja - {{ title }}</title>
    {% else %}
-       <title>E-duka</title>
+       <title>E-dukacja</title>
    {% endif %}
 </head>
 
 <body>
-    <header class="site-header">
-         <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-          <div class="container">
-                <a class="navbar-brand mr-4" href={% url 'core-home' %}>E-duka</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarToggle">
-                    <div class="navbar-nav mr-auto">
-                        <a class="nav-item nav-link" href={% url 'core-about' %}>O nas</a>
-                        {% if user.is_authenticated and user.is_student%}
-                            <a class="nav-item nav-link" href="#">Strefa studenta</a>
-                        {% endif %}
-                        {% if user.is_authenticated and user.is_teacher%}
-                            <a class="nav-item nav-link" href="#">Strefa nauczyciela</a>
-                        {% endif %}
-                        {% if user.is_authenticated and user.is_admin%}
-                            <a class="nav-item nav-link" href="#">Strefa administratora</a>
-                        {% endif %}
-                    </div>
-                    <!-- Navbar Right Side -->
-                    <div class="navbar-nav">
-                        {% if user.is_authenticated %}
-                            <a class="nav-item nav-link" href={% url 'users-logout' %}>Wyloguj</a>
-                            <a class="nav-item nav-link" href={% url 'users-profile' %}>Moje konto</a>
+  <main>
+  <header id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1>E-dukacja</h1>
+          <h2>Platforma wspomagająca uczniów i nauczycieli</h2>
+        </div>
+     </div>
+     <div id="menubar">
+        <ul id="menu-left">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+         <li class="selected"><a href={% url 'core-about' %}>O nas</a></li>
+         {% if user.is_authenticated and user.is_student%}
+            <li class="selected"><a href="#">Strefa studenta</a></li>
+         {% endif %}
+          {% if user.is_authenticated and user.is_teacher%}
+            <li class="selected"><a href={% url 'teacher-dashboard' %}>Strefa nauczyciela</a></li>
+          {% endif %}
+          {% if user.is_authenticated and user.is_admin%}
+            <li class="selected"><a href="#">Strefa administratora</a></li>
+          {% endif %}
+        </ul>
+        <ul id="menu-right">
+            {% if user.is_authenticated %}
+                <li><a href={% url 'users-logout' %}>Wyloguj</a></li>
+                <li><a href={% url 'users-profile' %}>Mój profil</a></li>
+            {% else %}
+                <li><a href={% url 'users-login' %}>Zaloguj</a></li>
+                <li><a href={% url 'users-reg-stu' %}>Zarejestruj</a></li>
+            {% endif %}
+        </ul>
+     </div>
+   </header>
+      <div id="site_content">
 
-                        {% else %}
-                            <a class="nav-item nav-link" href={% url 'users-login' %}>Zaloguj</a>
-                            <a class="nav-item nav-link" href={% url 'users-reg-stu' %}>Zarejestruj</a>
-                        {% endif %}
-                    </div>
-                </div>
-           </div>
-          </nav>
-    </header>
-    <main role="main" class="container">
-      <div class="row">
-        <div class="col-md-8">
             {% if messages %}
                 {% for message in messages %}
                     <div class = "alert-{{ message.tags }}">
@@ -64,9 +61,13 @@
                 {% endfor %}
             {% endif %}
             {% block content %}{% endblock %}
-        </div>
-
       </div>
-    </main>
+
+    <div id="content_footer"></div>
+    <div id="footer">
+      <p><a href={% url 'core-home' %}>Strona główna</a> | <a href={% url 'core-about' %}>O nas</a> | <a href=#>Kontakt</a></p>
+      <p>Copyright &copy; PrzePaWerJo</p>
+    </div>
+  </main>
 </body>
 </html>
