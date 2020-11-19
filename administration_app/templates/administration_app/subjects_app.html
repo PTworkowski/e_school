@@ -1,0 +1,13 @@
+{% extends "core/base.html" %}
+{% block title %} Zarządzanie przedmiotami {% endblock %}
+{% block content %}
+    <h1> Zarządzanie przedmiotami</h1>
+
+    {% for sub in subjects %}
+        <h6>
+            <tr>
+              {{ sub }}
+            </tr>
+        </h6>
+    {% endfor %}
+{% endblock %}

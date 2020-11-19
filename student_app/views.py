@@ -1,7 +1,7 @@
 from django.db.models import query
 from django.forms import Form
 from django.shortcuts import render, redirect
-from django.http import Http404, HttpResponseRedirect
+from django.http import Http404
 
 
 def get_link(request):
@@ -11,17 +11,20 @@ def get_link(request):
         raise Http404('Nie ma obecnie żadnych dostępnych linków.')
     return render(request,'student_app/get_link.html', {'Zoom_link : zoom'})
 
-def get_File(request):
+
+def view_File(request):
     if request.method == "GET":
-        form = DownloadFile(request.GET, request.get)
+        form = ViewFile(request.GET, request.get)
         if form.is_valid():
-            id=request.POST.get("id")
-            ans = query.objects.get(id=id)
+            id=request.POST.get("file_id")
+            ans = query.objects.get(id=file_id)
             response=ans.repo
             if ans is None:
-                return redirect("file.html")
+                return redirect("view-file.html")
             else:
                 return redirect(response)
     else:
         form = Form()
-    return render(request,"file.html",{'form':form})
+    return render(request,"view-file.html",{'form':form})
+
+#get success url
