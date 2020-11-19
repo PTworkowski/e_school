@@ -17,5 +17,28 @@
                 <h3>Moje Menu</h3>
           </div>
      </div>
+  <div class="sidebar">
+        <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+             <div>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="#">TO DO Użytkownicy</a></li>
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href={% url 'subjects-profile' %}>Przedmioty</a></li>
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="">TO DO Kursy</a></li>
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="">TO DO Grafik</a></li>
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="#">TO DO Wiadomości</a></li>
+                </ul>
+              </div>
+         <br>
+                  <h3>Lupa</h3>
+                  <form method="post" action="#" id="search_form">
+                  <p>
+                <input class="search" type="text" name="search_field" value="Wpisz szukane słowo....." />
+                <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" alt="Wyszukaj" title="Search" />
+                  </p>
+                  </form>
+               </div>
+                <div class="sidebar_base"></div>
+           </div>
    </div>
 {% endblock content%}

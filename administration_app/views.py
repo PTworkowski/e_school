@@ -5,19 +5,10 @@ from .models import Subjects
 
 # Create your views here.
 
-#Nie wiem
-def i_am_admin(request):
-    if request.users_app.models.MyUser.is_admin:
-        return True
-    else:
-        return False
-
-
 
 def subject_list(request):
-    if i_am_admin(request):
-        subs = Subjects.objects.all()
-        return render(request, 'administration_app/subjects_app.html', {'subjects': subs})
+    subs = Subjects.objects.all()
+    return render(request, 'administration_app/subjects_app.html', {'subjects': subs})
 
 
 

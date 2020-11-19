@@ -2,6 +2,14 @@
 {% block title %} Zarządzanie przedmiotami {% endblock %}
 {% block content %}
     <h1> Zarządzanie przedmiotami</h1>
+    <br>
+    <ul id="menu">
+        <li class="selected">
+            <a href="/#/">Dodaj nowy przedmiot</a>
+            <a href="/#/">Usuń przedmiot</a>
+        </li>
+    </ul>
+    <p>
 
     {% for sub in subjects %}
         <h6>
