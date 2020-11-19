@@ -5,5 +5,7 @@ __pycache__/
 *.pyc
 db.sqlite3
 */migratons/
+/migratons/
 !*/migrations/__init__.py
+*/media/
 

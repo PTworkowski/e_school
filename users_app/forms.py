@@ -9,14 +9,20 @@ class CustomUserRegisterForm(UserCreationForm):
 
     class Meta:
         model = MyUser
-        fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
+        fields = [
+            "username",
+            "first_name",
+            "last_name",
+            "email",
+            "password1",
+            "password2",
+        ]
 
 
 class UserAdresUpdateForm(forms.ModelForm):
-
     class Meta:
-        model=Address
-        fields=['address', 'building','apartment', 'city', 'zip_code']
+        model = Address
+        fields = ["address", "building", "apartment", "city", "zip_code"]
 
 
 
@@ -25,4 +31,4 @@ class UserUpdateForm(forms.ModelForm):
 
     class Meta:
         model = MyUser
-        fields = ['username', 'first_name', 'last_name', 'email']
+        fields = ["username", "first_name", "last_name", "email"]
