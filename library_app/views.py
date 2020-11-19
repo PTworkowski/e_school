@@ -4,15 +4,14 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib import messages
 from library_app.models import Files
 from .forms import UploadFile, UploadMultiFile
-from e_school.decorators import student_required, teacher_required, admin_required
+from e_school.decorators import admin_or_teacher_required
 
 
 # Create your views here.
 
 
 @login_required
-@admin_required
-@teacher_required
+@admin_or_teacher_required
 def multi_upload(request):
     if request.method == "POST":
         form = UploadMultiFile(request.POST, request.FILES)
