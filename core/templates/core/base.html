@@ -40,7 +40,7 @@
             <li class="selected"><a href="#">Strefa administratora</a></li>
           {% endif %}
            {% if user.is_authenticated and user.is_admin or user.is_teacher%}
-            <li class="selected"><a href={% url 'library-upload'%}>Upload</a></li>
+            <li class="selected"><a href={% url 'library-upload' %}>Upload</a></li>
             {% endif %}
         </ul>
         <ul id="menu-right">

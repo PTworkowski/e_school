@@ -9,21 +9,21 @@ from e_school.decorators import teacher_required
 def send_link(request):
     return render(request,'teacher_app/send_link.html')
 
-@login_required
-@teacher_required
-class SendLinkView(FormView):
-    if request.method == 'POST':
-        form = SendLinkForm(request.POST)
-        if form.is_valid():
-
-        return HttpResponseRedirect(reverse('teacher_app/send_link'))
-
-    else:
-        context = {
-            'form': form,
-            'zoom_link': zoom_link
-        }
-        return render(request, '', context)
+# @login_required
+# @teacher_required
+# class SendLinkView(FormView):
+#     if request.method == 'POST':
+#         form = SendLinkForm(request.POST)
+#         if form.is_valid():
+#
+#         return HttpResponseRedirect(reverse('teacher_app/send_link'))
+#
+#     else:
+#         context = {
+#             'form': form,
+#             'zoom_link': zoom_link
+#         }
+#         return render(request, '', context)
 
 class MeterialsManagementView(FormView):
     template_name = "teacher_app/file_upload.html"
