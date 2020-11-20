@@ -35,7 +35,7 @@ def admin_required(func):
 
 def admin_or_teacher_required(func):
     def wrap(request, *args, **kwargs):
-        if not request.user.is_admin or not request.user.is_teacher:
+        if not request.user.is_admin and not request.user.is_teacher:
             return HttpResponseForbidden()
         return func(request, *args, *kwargs)
 
