@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'core.apps.CoreConfig',
     'users_app.apps.UsersAppConfig',
     'teacher_app.apps.TeacherAppConfig',
+    'administration_app.apps.AdministrationAppConfig',
     'library_app',
     'crispy_forms',
     'django.contrib.admin',
