@@ -12,7 +12,7 @@ class CustomUserRegisterForm(UserCreationForm):
         fields = ['username', 'first_name', 'last_name', 'email', 'password1', 'password2']
 
 
-class UserAdresUpdateForm(forms.ModelForm):
+class UserAddressUpdateForm(forms.ModelForm):
 
     class Meta:
         model=Address
