@@ -1,6 +1,6 @@
 from django.db import models
 from users_app.models import MyUser
-
+#from library_app.models import Files
 
 
 
@@ -49,6 +49,6 @@ class Course(models.Model):
 
 """#Nie wiem czy to jest poprawne, myśle że to jest niepotrzebne????
 class GroupMaterials(models.Model):
-    id_files = models.ManyToManyField(library_ap, related_name='files')
+    id_files = models.ManyToManyField(Files related_name='files')
     id_course = models.ForeignKey(Course, on_delete=models.CASCADE)
 """
