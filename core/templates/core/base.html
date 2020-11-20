@@ -31,7 +31,7 @@
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
          <li class="selected"><a href={% url 'core-about' %}>O nas</a></li>
          {% if user.is_authenticated and user.is_student%}
-            <li class="selected"><a href="#">Strefa studenta</a></li>
+            <li class="selected"><a href={% url 'student_dashboard'%}>Strefa studenta</a></li>
          {% endif %}
           {% if user.is_authenticated and user.is_teacher%}
             <li class="selected"><a href={% url 'teacher-dashboard' %}>Strefa nauczyciela</a></li>

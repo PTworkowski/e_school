@@ -1,18 +1,15 @@
 from django.db.models import query
 from django.forms import Form
 from django.shortcuts import render, redirect
-from django.http import Http404
+from administration_app import Course
 
 
 def get_link(request):
-    try:
-        Link = Zoom_link.objects.get(pk=zoom_link_id)
-    except Zoom_link.DoesNotExist:
-        raise Http404('Nie ma obecnie żadnych dostępnych linków.')
+    link = Course.objects.get(id=zoom_link_id)
     return render(request,'student_app/get_link.html', {'Zoom_link : zoom'})
 
 
-def view_File(request):
+def view_file(request):
     if request.method == "GET":
         form = ViewFile(request.GET, request.get)
         if form.is_valid():
