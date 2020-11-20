@@ -14,9 +14,9 @@ def student_required(func):
 
 def teacher_required(func):
     def wrap(request, *args, **kwargs):
-        if not request.user.is_teacher:
-            return HttpResponseForbidden()
-        return func(request, *args, *kwargs)
+        if request.user.is_teacher:
+            return func(request, *args, *kwargs)
+        return HttpResponseForbidden()
 
     wrap.__doc__ = func.__doc__
     wrap.__name__ = func.__name__
@@ -25,9 +25,9 @@ def teacher_required(func):
 
 def admin_required(func):
     def wrap(request, *args, **kwargs):
-        if not request.user.is_admin:
-            return HttpResponseForbidden()
-        return func(request, *args, *kwargs)
+        if request.user.is_admin:
+            return func(request, *args, *kwargs)
+        return HttpResponseForbidden()
 
     wrap.__doc__ = func.__doc__
     wrap.__name__ = func.__name__
