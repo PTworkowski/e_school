@@ -3,10 +3,26 @@ from django.views.generic import CreateView, FormView
 from .forms import UploadMaterialsForm
 from .models import File
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+
 
 def send_link(request):
-
     return render(request,'teacher_app/send_link.html')
+
+@login_required
+class SendLinkView(FormView):
+    if request.method == 'POST':
+        form = SendLinkForm(request.POST)
+        if form.is_valid():
+
+        return HttpResponseRedirect(reverse('teacher_app/send_link'))
+
+    else:
+        context = {
+            'form': form,
+            'zoom_link': zoom_link
+        }
+        return render(request, '', context)
 
 class MeterialsManagementView(FormView):
     template_name = "teacher_app/file_upload.html"
