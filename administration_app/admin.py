@@ -1,10 +1,8 @@
 from django.contrib import admin
-from .models import Course, Schedule, GroupMaterials
-
-@admin.register(Course)
-class CourseAdmin(admin.ModelAdmin):
-    list_display = ('name', 'subject', 'zoom_link','level','teacher')
+from .models import Course, Schedule, GroupMaterials, StudentCourses
 
 
 admin.site.register(Schedule)
+admin.site.register(Course)
 admin.site.register(GroupMaterials)
+admin.site.register(StudentCourses)

@@ -12,7 +12,7 @@ def upload_folder(instance, filename):
 
 
 class Files(models.Model):
-    owner = models.ForeignKey(MyUser, on_delete=models.PROTECT)
+    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
     title = models.CharField(max_length=250, default="", null=True, blank=True)
     file = models.FileField(
         upload_to=upload_folder,

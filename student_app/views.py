@@ -1,17 +1,21 @@
 from django.shortcuts import render, get_object_or_404
-from administration_app.models import Course, GroupMaterials
+from administration_app.models import Course, GroupMaterials, StudentCourses
 from django.views.generic import ListView, DetailView
 from django.conf import settings
 from users_app.models import MyUser
+from django.db.models import Q
+from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
+
+
 # Create your views here.
 
 class UserCourseListView(ListView):
-    queryset = Course.objects.all()
-    context_object_name = 'courses'
+    model = Course
+    context_object_name = 'student_courses'
     template_name = 'student_app/students_groups.html'
 
 
 
 class CourseDetailView(DetailView):
-    model = Course
+    model = StudentCourses
     template_name = 'student_app/course_detail.html'

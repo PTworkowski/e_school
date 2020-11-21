@@ -33,6 +33,7 @@ def admin_required(func):
     wrap.__name__ = func.__name__
     return wrap
 
+
 def admin_or_teacher_required(func):
     def wrap(request, *args, **kwargs):
         if not request.user.is_admin and not request.user.is_teacher:
