@@ -28,7 +28,7 @@
                     <div class="navbar-nav mr-auto">
                         <a class="nav-item nav-link" href={% url 'core-about' %}>O nas</a>
                         {% if user.is_authenticated and user.is_student%}
-                            <a class="nav-item nav-link" href="#">Strefa studenta</a>
+                            <a class="nav-item nav-link" href={% url 'student-courses' %}>Strefa studenta</a>
                         {% endif %}
                         {% if user.is_authenticated and user.is_teacher%}
                             <a class="nav-item nav-link" href="#">Strefa nauczyciela</a>

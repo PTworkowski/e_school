@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "users_app.apps.UsersAppConfig",
     "administration_app.apps.AdministrationAppConfig",
     "library_app.apps.LibraryAppConfig",
+    "student_app.apps.StudentAppConfig",
     "crispy_forms",
     "django.contrib.admin",
     "django.contrib.auth",

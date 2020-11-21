@@ -9,7 +9,7 @@ class MyUser(AbstractUser):
     is_admin = models.BooleanField(default=False, blank=False, null=False)
 
     def __str__(self):
-        return f"{self.username} Profil "
+        return self.username
 
 
 class Address(models.Model):

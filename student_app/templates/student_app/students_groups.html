@@ -1,0 +1,12 @@
+{% extends "core/base.html" %}
+{% block content %}
+    <h1 class="mb-3">Kursy {{ view.kwargs.username }} </h1>
+    {% for course in courses %}
+        <h2>
+            <a href="{% url 'student-courses-detail' course.id %}">{{ course.name }}</a>
+        </h2>
+    {% endfor %}
+
+
+
+{% endblock %}
