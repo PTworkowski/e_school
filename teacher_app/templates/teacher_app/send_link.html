@@ -1,26 +1,19 @@
 {% extends "core/base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
-<div class="container">
-    <div>
-        <h3>Prześlij link do spotkania wybranej grupie</h3>
-    </div>
-    <br>
-    <form method="post">
+<div id="content">
+    <form method="post" id="form_settings">
         {% csrf_token %}
-        <div class="dropdown">
-          <button class="dropbtn">Wybierz grupę</button>
-            <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
-            </div>
+        <fieldset class="form-group">
+            <h3 class="border-bottom">Prześlij link do spotkania wybranej grupie</h3>
+         </fieldset>
+         <div class="form-group">
+           {{ form|crispy }}
+             <br>
+             <br>
+             <br>
+        <button class="site-btn" type="submit">Prześlij linka grupie</button>
         </div>
-        <p></p>
-        <div class="text-center">
-            <textarea class="form-control" name="text" id="" cols="40" rows="10" placeholder="Tu wklej link do spotkania..."></textarea>
-        </div>
-        <br>
-        <button class="site-btn">Prześlij linka grupie</button>
     </form>
 </div>
 <br>

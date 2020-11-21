@@ -26,21 +26,22 @@ h1, h2, h3
 h2
 { font-size: 160%;
   padding: 9px 0 5px 0;
-  color: #009FBC;}
+  color: #AEB002;}
 
 h3
 { font-size: 140%;
   padding: 5px 0 0 0;}
 
 h4, h6
-{ color: #009FBC;
+{ color: black;
   padding: 0 0 5px 0;
-  font: normal 110% arial;
-  text-transform: uppercase;}
+  font: normal 110%  'century gothic', arial, sans-serif;;
+}
 
 h5, h6
-{ color: #888;
-  font: normal 95% arial;
+{ color: black;
+  font: normal 100 'century gothic', arial, sans-serif;
+  font-size: 20px;
   letter-spacing: normal;
   padding: 0 0 15px 0;}
 
@@ -50,7 +51,7 @@ a, a:hover
   color: #AEB002;}
 
 a:hover /* texts within the menu buttons after pointing at them */
-{ text-decoration: underline;
+{ text-decoration: none;
     color: #228B22;
 }
 
@@ -295,12 +296,13 @@ ul#menu-left li, ul#menu-right li
 
 .search
 { color: #5D5D5D;
-  border: 1px solid #BBB;
+  border: 2px solid #BBB;
   width: 190px;
   padding: 4px;
-  font: 100% arial, sans-serif;}
+  border-radius: 5px;
+  font-family: 'century gothic', arial, sans-serif;
 
-/*
+
 .form_settings
 { margin: 15px 0 0 0;}
 
@@ -320,6 +322,7 @@ ul#menu-left li, ul#menu-right li
   background: #FFF;
   color: #47433F;}
 
+/*
 .form_settings .submit
 { font: 100% arial;
   border: 0;
@@ -351,7 +354,7 @@ ul#menu-left li, ul#menu-right li
   border-top: 1px solid #D9D5CF;
   border-bottom: 1px solid #FFF;
   margin: 0 0 20px 0;}
-*/
+
 table
 { margin: 10px 0 30px 0;}
 
@@ -364,13 +367,15 @@ table tr th, table tr td
 table tr td
 { background: #E5E5DB;
   color: #47433F;
-  border-top: 1px solid #FFF;}
+  border-top: 3px solid #FFF;}
+*/
+
 
 /* Style The Dropdown Button */
 .dropbtn, .site-btn {
   background-color: #4CAF50;
   color: white;
-  padding: 16px;
+  padding: 14px;
   font-size: 16px;
   border: none;
   cursor: pointer;
@@ -395,7 +400,7 @@ table tr td
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
+  font-color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;

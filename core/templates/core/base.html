@@ -22,7 +22,11 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1>E-dukacja</h1>
+            <h1>
+
+                <a href={% url 'core-home' %}>E-dukacja</a>
+
+            </h1>
           <h2>Platforma wspomagająca uczniów i nauczycieli</h2>
         </div>
      </div>
@@ -39,8 +43,8 @@
           {% if user.is_authenticated and user.is_admin%}
             <li class="selected"><a href="#">Strefa administratora</a></li>
           {% endif %}
-           {% if user.is_authenticated and user.is_admin or user.is_teacher%}
-            <li class="selected"><a href={% url 'library-upload' %}>Upload</a></li>
+           {% if user.is_authenticated and user.is_admin%}
+            <li class="selected"><a href={% url 'library-upload' %}>ładowanie plików</a></li>
             {% endif %}
         </ul>
         <ul id="menu-right">
