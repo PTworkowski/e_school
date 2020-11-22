@@ -1,6 +1,6 @@
 <h1>E-dukacja</h1>
 
-*E-Learning platform to organization online classes.*
+*A platform supporting students and teachers in online learning.*
 
 # Index:
 1. [Installation](#installation)
@@ -17,19 +17,23 @@ Use the package manager [git](https://git-scm.com/downloads) to download __E-duk
 ```sh
 git clone https://github.com/PTworkowski/e_school.git
 ```
-Create virtual environment. In beginning install this with [pip](https://pip.pypa.io/en/stable/).
+Create the virtual environment. At the beginning install it with [pip](https://pip.pypa.io/en/stable/).
 ```sh
 pip install virtualenv
 ```
-Create new virtual environment _e-school-env_ (name is arbitrary)
+Create a new virtual environment _e-school-env_ (the name is arbitrary)
 ```sh
 virtualenv e-school-env
 ```
-Activate virtual environment
+Activate the virtual environment
 
 Windows
 ```sh
-
+.\venv\Scripts\activate.bat
+```
+or
+```sh
+.\venv\Scripts\activate
 ```
 Linux & McOS
 ```sh
@@ -37,14 +41,14 @@ source e-school-env/bin/activate
 ```
 
 
-Install __requirements.txt__ with pythons library.
+Install __requirements.txt__ with python's library.
 ```sh
 pip install -r requariments.txt
 ```
 
 ## Usage <a name="usage"></a> 
 
-Create migrations of models data base and running the server
+Make and run migrations, after that run the server.
 
 Windows
 ```sh
@@ -66,68 +70,62 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## How to <a name="how-to"></a> 
 
-The platform support section of:
-1. Teachers
-2. Students
-3. Administration
+The platform supports the following sections:
+1. Teachers section
+2. Students section
+3. Administration section
 
 
 
-To full using the platform must you registration as student or teacher. 
-New administration profile should be accepted by superuser.
+To fully use the platform you must register as a student or a teacher. 
+A new administration profile must be accepted by a superuser.
 
-New user chooses a profile __student__ or __teacher__.
+A new user chooses a profile __student__ or __teacher__.
 
 
-To create new profile should you give:
+To create a new profile you should provide:
 - name
 - e-mail
 - password
 
-New user is accepted by administration. After accepted you can login to you account and updating your personal data.
+A new user is accepted by the administration. After you are accepted, you can login to your account and update your personal data.
 
+**Status of the platform**
 
-**Status of platform**
-
-Platform in during developing process.
-
+The platform is still under development.
 
 Legend:
 - [x] completed functionality
-- [ ] in developing
+- [ ] in development
 
 
 ***1. Teacher Account***
-- [x] Updating personal data
-- [ ] Teachers Access to courses as list od assigned groups
-- [x] Access to the library
-- [ ] Files browsing, posting and downloading in the library
-- [ ] Creating library for each course
-- [x] Add the links to online classes
-- [ ] Creating the tests
-- [ ] Possibility to post and view homework content
-
+ - [x] Updating personal data
+ - [ ] Accessing Teachers Courses (as a list of assigned groups)
+ - [x] Accessing Library
+ - [ ] Files browsing, posting into and downloading from the Library
+ - [ ] Creating library for each course
+ - [x] Adding the links to online classes
+ - [ ] Creating tests
+ - [ ] Posting and viewing homework content
 
 
 ***2. Student Account***
-- [x] Updating personal data
-- [x] Access to own course groups
-- [x] Access to link on group course
-- [ ] Access to group library
-- [ ] Possibility to view homework content
-
-
-***3. Administration Account***  
-- [x] Updating personal data
-- [ ] Accepted new users accounts (teachers and students)
-- [ ] Payment Management of students
-- [ ] Subjects management
-- [ ] Create new Subjects and deleting Subjects
-- [ ] Create new course groups
-- [ ] Files Management
-
-
-
-
-## License <a name="license"></a> 
-[MIT](./LICENSE.rm)
+ - [x] Updating personal data
+ - [x] Accessing Course Groups
+ - [x] Accessing link to Group Course
+ - [ ] Accessing Group’s Library
+ - [ ] Viewing homework content
+ 
+ 
+ ***3. Administration Account*** 
+ - [x] Updating personal data
+ - [ ] Accepting new users accounts (Teachers and Students)
+ - [ ] Managing Payments for students
+ - [x] Managing Subjects/Courses
+ - [ ] Creating and deleting Subjects
+ - [ ] Creating Group Courses
+ - [ ] Managing Materials (in Library)
+ 
+ ## License <a name="license"></a>
+ [MIT](./LICENSE.rm)
