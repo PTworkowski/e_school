@@ -1,15 +1,20 @@
 {% extends "core/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-    <div class="content-section">
+    <div id="content">
       <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb4">file upload</legend>
+                <h3 class="border-bottom">Dodaj materiały do wirtualnej biblioteki Szkoły</h3>
                 {{ form|crispy }}
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Upload</button>
+                <button class="site-btn" type="submit">Załaduj plik(i)</button>
             </div>
         </form>
     </div>

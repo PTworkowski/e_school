@@ -3,7 +3,7 @@
     <h1 class="mb-3">Kursy {{ view.kwargs.username }} </h1>
     {% for course in student_courses %}
         <h3>
-            <a href="{% url 'student-courses-detail' course.id %}">{{ course.name }}</a>
+            <a href="{% url 'admin-courses-detail' course.id %}">{{ course.name }}</a>
         </h3>
     {% endfor %}
 

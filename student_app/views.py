@@ -9,6 +9,11 @@ from django.contrib.auth.mixins import UserPassesTestMixin, LoginRequiredMixin
 
 # Create your views here.
 
+
+def stud_dash(request):
+    return render(request, "student_app/dashboard.html")
+
+
 class UserCourseListView(ListView):
     model = Course
     context_object_name = 'student_courses'

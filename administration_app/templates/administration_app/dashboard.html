@@ -1,0 +1,45 @@
+{% extends "core/base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+  <div id="content">
+
+    <div class="media-body">
+      <h2> Witaj na swojej stronie, {{ user.username }} </h2>
+      <h3 class="account-heading">{{ user.username }}</h3>
+      <p class="text-secondary">{{ user.email }}</p>
+    </div>
+  </div>
+  <div id="sidebar_container">
+     <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+            <!-- insert your sidebar items here -->
+                <h3>Moje Menu</h3>
+          </div>
+     </div>
+     <div class="sidebar">
+        <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+             <div>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="#">Zarządzanie Płatnościami</a></li>
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href={% url "admin-courses" %}>Zarządzanie Grupami</a></li>
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href={% url 'library-upload' %}>Zarządzanie Materiałami</a></li>
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="#">Grafik</a></li>
+                    <li class="list-group-item list-group-item-light"><a class="nav-item nav-link" href="#">Wiadomości</a></li>
+                </ul>
+              </div>
+         <br>
+                  <h4>Wyszukiwarka</h4>
+                  <form method="post" action="#" id="search_form">
+                  <p>
+                <input class="search" type="text" name="search_field" value="Wpisz szukane słowo....." />
+                <input name="search" type="image" style="border: 0; margin: 0 0 -9px 10px;" alt="Szukaj" />
+                  </p>
+                  </form>
+               </div>
+                <div class="sidebar_base"></div>
+           </div>
+      </div>
+   </div>
+{% endblock content%}
