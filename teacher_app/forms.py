@@ -6,6 +6,7 @@ from administration_app.models import Course
 #     Tytuł = forms.CharField(max_length=50)
 #     file = forms.FileField(label="Wybierz plik do dodania")
 
+
 class SendLinkForm(forms.ModelForm):
     class Meta:
         model = Course

@@ -16,11 +16,10 @@ def stud_dash(request):
 
 class UserCourseListView(ListView):
     model = Course
-    context_object_name = 'student_courses'
-    template_name = 'student_app/students_groups.html'
-
+    context_object_name = "student_courses"
+    template_name = "student_app/students_groups.html"
 
 
 class CourseDetailView(DetailView):
     model = StudentCourses
-    template_name = 'student_app/course_detail.html'
+    template_name = "student_app/course_detail.html"

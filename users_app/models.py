@@ -14,7 +14,9 @@ class MyUser(AbstractUser):
 
 
 class Address(models.Model):
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, primary_key=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL, primary_key=True, on_delete=models.CASCADE
+    )
     address = models.CharField(max_length=120, default="", null=True, blank=True)
     building = models.CharField(max_length=20, default="", null=True, blank=True)
     apartment = models.CharField(max_length=20, default="", null=True, blank=True)

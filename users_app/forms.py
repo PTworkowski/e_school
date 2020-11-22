@@ -25,7 +25,6 @@ class UserAdresUpdateForm(forms.ModelForm):
         fields = ["address", "building", "apartment", "city", "zip_code"]
 
 
-
 class UserUpdateForm(forms.ModelForm):
     email = forms.EmailField()
 

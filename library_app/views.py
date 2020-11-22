@@ -11,7 +11,6 @@ from e_school.decorators import admin_or_teacher_required
 
 
 @login_required
-
 def multi_upload(request):
     if request.method == "POST":
         form = UploadMultiFile(request.POST, request.FILES)

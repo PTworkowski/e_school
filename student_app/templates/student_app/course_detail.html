@@ -5,7 +5,11 @@
         <div class="media-body">
 
             <h2 class="article-title">{{ object.course.name }}</h2>
-            <p class="article-content" href= "object.course.zoom_link" >{{ object.course.zoom_link }}</p>
+
+            <p class="article-content">Przedmiot: {{ object.course.subject }}</p>
+            <p class="article-content">Poziom: {{ object.course.level }}</p>
+            <p class="article-content">Zoom: {{ object.course.zoom_link }}</p>
+            <p class="article-content">Prowadzący: {{ object.course.teacher }}</p>
         </div>
 
     </article>

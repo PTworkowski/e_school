@@ -13,4 +13,3 @@ def create_adres(sender, instance, created, **kwargs):
 @receiver(post_save, sender=settings.AUTH_USER_MODEL)
 def save_adres(sender, instance, **kwargs):
     instance.address.save()
-

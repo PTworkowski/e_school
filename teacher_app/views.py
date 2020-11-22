@@ -25,10 +25,10 @@ def send_link(request):
             return reverse(redirect("teacher_app/dashboard.html"))
     else:
         form = SendLinkForm
-    return render(request, "teacher_app/send_link.html", {'form': form})
+    return render(request, "teacher_app/send_link.html", {"form": form})
 
 
 class TeacherCourseListView(ListView):
     model = Course
-    context_object_name = 'courses'
-    template_name = 'teacher_app/teacher_courses.html'
+    context_object_name = "courses"
+    template_name = "teacher_app/teacher_courses.html"
