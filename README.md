@@ -128,4 +128,4 @@ Legend:
  - [ ] Managing Materials (in Library)
  
  ## License <a name="license"></a>
- [MIT](./LICENSE.rm)
+ [MIT](./LICENSE.md)
